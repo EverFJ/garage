@@ -7,7 +7,11 @@ const carSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    year: Number
+    year: Number,
+    created: {
+        type: Date,
+        default: Date.now()
+    }
 })
 
 module.exports = mongoose.model("Car", carSchema)
