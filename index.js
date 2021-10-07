@@ -79,10 +79,20 @@ carModel.find({
     .catch(console.error)
 
 carModel.find({
+        model: {
+            $regex: "o",
+            $options: "i"
+        }
+    })
+    .then(cars => console.log("Cars models containing an \"o\" : ", cars))
+    .catch(console.error)
+
+carModel.find({
         model: /o/i
     })
     .then(cars => console.log("Cars models containing an \"o\" : ", cars))
     .catch(console.error)
+
 
 mongoose.connect(db, (error) => {
     if (error) {
