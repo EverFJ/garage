@@ -10,7 +10,7 @@ const carSchema = new mongoose.Schema({
     year: Number,
     created: {
         type: Date,
-        default: Date.now()
+        default: new Date()
     }
 })
 

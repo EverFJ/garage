@@ -46,7 +46,10 @@ carModel.findById("615dbbc85e878700926fec6f")
 carModel.updateOne({
         _id: "615dbbc85e878700926fec6f"
     }, {
-        year: 2000
+
+        $set: {
+            year: 2000
+        }
     })
     .then(car => console.log("car updated is : ", car))
     .catch(error => console.error(error))
